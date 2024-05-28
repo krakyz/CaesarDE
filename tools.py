@@ -43,13 +43,14 @@ def fix_text(text, mode: str):
     """ mode - decryption или encryption"""
     text = text.upper().replace('Ё', 'Е')
 
-    if re.search(r'[\d]', #^a-zA-Zа-яА-ЯёЁ\s.,!?;:\-–—\'"«»“”
+    if re.search(r'[\d]',  # ^a-zA-Zа-яА-ЯёЁ\s.,!?;:\-–—\'"«»“”
                  text):  # или просто \d, чтобы уведомлять, что в тексте есть цифры
         raise ValueError(
-            "В тексте не должно быть цифр или других небуквенных символов. Напишите их текстом или очистите текст от этих символов.")
+            "В сообщении не должно быть цифр. Напишите их текстом или очистите сообщение от этих символов.")
 
-    if re.search(r'[А-Я]', text) and re.search(r'[A-Z]', text):
-        raise ValueError("Текст содержит символы из русского и английского алфавитов. Используйте один алфавит.")
+    if mode == 'hacking':
+        if re.search(r'[А-Я]', text) and re.search(r'[A-Z]', text):
+            raise ValueError("Сообщение содержит символы из русского и английского алфавитов. Используйте один алфавит.")
 
     if mode == 'encryption':
         text = re.sub(r'[^A-ZА-Я]', '', text)
@@ -94,5 +95,4 @@ def decryption(cipher, alphabet, frequency_table):
         for char in cipher
     )
     return decrypted_text, best_shift
-
 
