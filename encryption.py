@@ -72,4 +72,4 @@ def encrypt_message(message, cipher_shift):
     return cipher
 
 
-print(encrypt_message('ВОТ оТКРЫТ БАЛАГАНЧИК ДЛЯ ВЕСЕЛЫХ И СЛАВНЫХ ДЕТЕЙ СМО', 14))
+# print(encrypt_message('ВОТ оТКРЫТ БАЛАГАНЧИК ДЛЯ ВЕСЕЛЫХ И СЛАВНЫХ ДЕТЕЙ СМО', 14))

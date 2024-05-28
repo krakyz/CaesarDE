@@ -136,8 +136,8 @@ button_grid = ttk.Frame(encoder_frame, padding=[0, 8, 0, 0])
 copy_button = ttk.Button(button_grid, text="Копировать", padding=[8, 4],
                          command=lambda: tools.copy_text(encoder_output))
 copy_button.grid(row=1, column=0, padx=8)
-paste_button = ttk.Button(button_grid, text='Перенести в "Расшифрование"', padding=[8, 4], command=move_text)
-paste_button.grid(row=1, column=1)
+# paste_button = ttk.Button(button_grid, text='Перенести в "Расшифрование"', padding=[8, 4], command=move_text)
+# paste_button.grid(row=1, column=1)
 
 button_grid.pack(anchor=tk.NE)
 
